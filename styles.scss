@@ -1,18 +1,25 @@
 /* Stylesheet in SASS to be compiled into CSS */
 
+/* Font from file */
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/Figtree-VariableFont_wght.ttf");
+}
+
 /* Variables */
 $yellow: hsl(47, 88%, 63%);
 $white: hsl(0, 0%, 100%);
 $grey: hsl(0, 0%, 50%);
 $black: hsl(0, 0%, 7%);
 
-$font-family: 'Figtree', sans-serif;
+$font-family: "Figtree", sans-serif;
 $font-weight-normal: 400;
 $font-weight-bold: 800;
 
 $font-size-normal: 16px;
 $font-size-large: 24px;
 $font-size-small: 14px;
+$font-size-medium: 20px;
 
 /* CSS Reset */
 * {
@@ -21,3 +28,60 @@ $font-size-small: 14px;
   box-sizing: border-box;
 }
 
+body {
+  font-family: $font-family;
+  font-size: $font-size-normal;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: $yellow;
+
+    .card {
+      min-height: 500px;
+      max-width: 327px;
+
+      @media screen and (min-width: 768px) {
+        max-width: 100%;        
+      }
+      
+      background-color: $white;
+      padding: 24px;
+
+      border: 1px solid $black;
+      border-radius: 20px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .card_image {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .footer {
+    background-color: $black;
+    color: $white;
+
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+
+    a {
+      color: $yellow;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $grey;
+    }
+  }
+}
