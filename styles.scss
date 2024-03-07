@@ -1,1 +1,23 @@
 /* Stylesheet in SASS to be compiled into CSS */
+
+/* Variables */
+$yellow: hsl(47, 88%, 63%);
+$white: hsl(0, 0%, 100%);
+$grey: hsl(0, 0%, 50%);
+$black: hsl(0, 0%, 7%);
+
+$font-family: 'Figtree', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 800;
+
+$font-size-normal: 16px;
+$font-size-large: 24px;
+$font-size-small: 14px;
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
