@@ -19,6 +19,7 @@ $font-weight-bold: 800;
 $font-size-normal: 16px;
 $font-size-large: 24px;
 $font-size-small: 14px;
+$font-size-xsmall: 12px;
 $font-size-medium: 20px;
 
 /* CSS Reset */
@@ -30,7 +31,7 @@ $font-size-medium: 20px;
 
 body {
   font-family: $font-family;
-  font-size: $font-size-normal;
+  color: $black;
 
   .main {
     display: flex;
@@ -45,7 +46,7 @@ body {
       max-width: 327px;
 
       @media screen and (min-width: 768px) {
-        max-width: 100%;        
+        max-width: 384px;        
       }
       
       background-color: $white;
@@ -53,10 +54,12 @@ body {
 
       border: 1px solid $black;
       border-radius: 20px;
+      box-shadow: 8px 8px $black;
 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 24px;
 
       .card_image {
         height: 200px;
@@ -64,12 +67,67 @@ body {
         object-fit: cover;
         border-radius: 10px;
       }
+
+      .card_content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .blog_category {
+          font-size: clamp($font-size-xsmall, 1rem, $font-size-small);
+          font-weight: $font-weight-bold;
+          padding: 4px 12px;
+          max-width: fit-content;
+          border-radius: 4px;
+          background-color: $yellow;
+        }
+
+        .blog_published {
+          font-size: clamp($font-size-xsmall, 1rem, $font-size-small);
+        }
+
+        .blog_heading {
+          font-size: clamp($font-size-medium, 1rem, $font-size-large);
+          font-weight: $font-weight-bold;
+          text-decoration: none;
+        }
+
+        .blog_description {
+          font-size: clamp($font-size-small, 1rem, $font-size-normal);
+          color: $grey;
+        }
+      }
+
+      .card_author {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        .card_author_image {
+          height: 32px;
+          width: 32px;
+        }
+
+        .author_name {
+          font-size: $font-size-small;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+
+    .card:hover {
+      box-shadow: 16px 16px $black;
+
+      .card_content .blog_heading {
+        color: $yellow;
+      }
     }
   }
 
   .footer {
     background-color: $black;
     color: $white;
+    text-align: center;
 
     padding: 0.5rem 1rem;
     display: flex;
