@@ -25,7 +25,7 @@ Users should be able to:
 ### Screenshot
 
 ![Blog preview component in desktop size](./assets/images/blog-preview-desktop-screenshot.png)
-![Blog preview component in mobile size](./assets/images/blog-preview-mobile-screenshot.png)
+![Blog preview component in mobile size](./assets/images/blog-preview-mobile-screenshot.png?)
 
 ### Links
 
